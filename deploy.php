@@ -1,18 +1,25 @@
+<pre>
 <?php
-echo "RUN ";
-
-print("<pre>" . execPrint("git pull") . "</pre>");
-
-echo " END";
-
-
-
-
-function execPrint($command) {
-    $result = array();
-    exec($command, $result);
-    foreach ($result as $line) {
-        print($line . "\n");
-    }
+// Actually run the update
+$commands = array(
+	'echo $PWD',
+	'whoami',
+'git clone https://github.com/oonaon/boarddev.git ./web/',
+	'git pull',
+	'git status',
+);
+$output = "\n";
+$log = "####### ".date('Y-m-d H:i:s'). " #######\n";
+foreach($commands AS $command){
+    // Run it
+    $tmp = shell_exec("$command 2>&1");
+    // Output
+    $output .= "<span style=\"color: #6BE234;\">\$</span> <span style=\"color: #729FCF;\">{$command}\n</span>";
+    $output .= htmlentities(trim($tmp)) . "\n";
+    $log  .= "\$ $command\n".trim($tmp)."\n";
 }
+$log .= "\n";
+file_put_contents ('deploy-log.txt',$log,FILE_APPEND);
+echo $output; 
 ?>
+</pre>
