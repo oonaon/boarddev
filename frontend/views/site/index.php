@@ -7,7 +7,7 @@ $this->title = 'My Yii Application';
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>TEST DEPLOY SCRIPT 3 ADD</h1>
+        <h1>TEST DEPLOY SCRIPT 4 URL</h1>
 
         <p class="lead">You have successfully created your Yii-powered application.</p>
 
