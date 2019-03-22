@@ -4,9 +4,7 @@
 $commands = array(
 	'echo $PWD',
 	'whoami',
-'git clone https://github.com/oonaon/boarddev.git ./web/',
 	'git pull',
-	'git status',
 );
 $output = "\n";
 $log = "####### ".date('Y-m-d H:i:s'). " #######\n";
