@@ -20,7 +20,7 @@
         }
     }
     if (!$allowed) {
-        echo "<span style=\"color: #ff0000\">Sorry, no hamster - better convince your parents!</span>\n";
+        echo "<span style=\"color: #ff0000\">Sorry, cann't deploy!</span>\n";
     } else {
 
 // Actually run the update
